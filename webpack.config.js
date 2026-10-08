@@ -6,7 +6,6 @@ module.exports = {
   mode: 'development',
   entry: {
     app: ['whatwg-fetch', './js/app.js'],
-    about: ['./js/about.js'],
     venue: ['./js/venues.js'],
     web: ['./js/web.js'],
   },
@@ -15,10 +14,6 @@ module.exports = {
     filename: '[name].js',
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
     new webpack.DefinePlugin({
       VERSION: JSON.stringify(require('./package.json').version),
     }),
@@ -56,7 +51,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
+          presets: ['@babel/preset-env'],
         },
       },
     ],
