@@ -93,6 +93,8 @@ class WirelessMic(ChannelDevice):
         if 1 <= level <= 5:
             self.prev_battery = level
             self.timestamp = time.time()
+        elif level == 255:
+            self.runtime = ''
 
     # https://stackoverflow.com/questions/1784952/how-get-hoursminutes
     def set_runtime(self, runtime):
@@ -114,10 +116,10 @@ class WirelessMic(ChannelDevice):
         self.quality = int(quality)
 
     def set_power_lock(self, power_lock):
-        if power_lock in ['OFF', 'UNKN', 'UNKNOWN', 'NONE']:
-            self.power_lock = 'OFF'
-        elif power_lock in ['ON', 'ALL', 'POWER']:
-            self.power_lock = 'ON'
+        if power_lock in ['ON', 'ALL', 'POWER']:
+            self.power_lock = '🔒'
+        else:
+            self.power_lock = ''
 
     def tx_state(self):
         # WCCC Specific State for unassigned microphones

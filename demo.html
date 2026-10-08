@@ -162,6 +162,30 @@
         <h1>Connection Error!</h1>
         <p>Could not connect to the micboard server. Please refresh the page.</p>
       </div>
+      <div class="backgrounds">
+        <div class="container-fluid p-4">
+          <h4 class="text-white">Manage Background Photos</h4>
+          <!-- directory path hidden from UI -->
+          <form id="bg-upload-form" class="mb-3">
+            <div class="mb-2">
+              <label class="text-muted small mb-1">Name (must match channel name in micboard exactly, e.g. "larry" or "kim h")</label>
+              <input type="text" id="bg-name-input" class="form-control" placeholder="e.g. larry or kim h">
+            </div>
+            <div class="input-group mb-1">
+              <input type="file" id="bg-file-input" class="form-control" accept=".jpg,.jpeg,.png,.heic,.heif,.webp,.gif,.mp4">
+              <button type="submit" id="bg-upload-btn" class="btn btn-primary">Upload</button>
+            </div>
+            <small id="bg-upload-status" class="text-muted"></small>
+            <small class="text-muted d-block mt-1">Supported: JPG, PNG, HEIC (iPhone), WEBP (Android), MP4 &bull; Photos should be portrait orientation (e.g. 1080x1920) for best results in TV view</small>
+          </form>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="text-muted mb-0">Uploaded Photos</h6>
+            <button class="btn btn-sm btn-secondary" id="bg-view-toggle">Thumbnail View</button>
+          </div>
+          <div id="bg-file-list"></div>
+          <button class="btn btn-secondary mt-3" id="bg-close">Close</button>
+        </div>
+      </div>
       <div class="settings">
 
         <div class="row">
@@ -217,7 +241,7 @@
           <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4 navbar-nav" id="grouplist">
               <h4 class="text-white"><a class="nav-link" href='/'>micboard</a></h4>
-              <p class="text-muted"><a class="nav-link preset-link" id="go-group-0">all devices</a> | <a class="nav-link" id="go-extended" href="#">edit extended names</a> | <a class="nav-link" id="go-config">edit config</a></p>
+              <p class="text-muted"><a class="nav-link preset-link" id="go-group-0">all devices</a> | <a class="nav-link" id="go-extended" href="#">edit extended names</a> | <a class="nav-link" id="go-config">edit config</a> | <a class="nav-link" id="go-backgrounds" href="#">manage photos</a></p>
               <p class="text-muted"><a class="nav-link" id="go-groupedit" href="#">edit group</a></p>
               <div id="navbar-grouplist">
                 <p class="text-muted grp-link"><a class="nav-link preset-link" id="go-group-1">1:</a></p>
@@ -264,13 +288,7 @@
             <p class="runtime"></p>
             <p class="offset"></p>
             <canvas class="slotgraph"></canvas>
-            <p class="powerlock">
-              <svg class="bi lock-fill" width="1.5em" height="1.5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <rect width="11" height="9" x="4.5" y="8" rx="2"/>
-                <path fill-rule="evenodd" d="M6.5 5a3.5 3.5 0 117 0v3h-1V5a2.5 2.5 0 00-5 0v3h-1V5z" clip-rule="evenodd"/>
-                <!-- <path fill-rule="evenodd" d="M13.655 9H6.333c-.264 0-.398.068-.471.121a.73.73 0 00-.224.296 1.626 1.626 0 00-.138.59V15c0 .342.076.531.14.635.064.106.151.18.256.237a1.122 1.122 0 00.436.127l.013.001h7.322c.264 0 .398-.068.471-.121a.73.73 0 00.224-.296 1.627 1.627 0 00.138-.59V10c0-.342-.076-.531-.14-.635a.658.658 0 00-.255-.237 1.123 1.123 0 00-.45-.128zm.012-1H6.333C4.5 8 4.5 10 4.5 10v5c0 2 1.833 2 1.833 2h7.334c1.833 0 1.833-2 1.833-2v-5c0-2-1.833-2-1.833-2zM6.5 5a3.5 3.5 0 117 0v3h-1V5a2.5 2.5 0 00-5 0v3h-1V5z" clip-rule="evenodd"/> -->
-              </svg>
-            </p>
+            <p class="powerlock"></p>
             <p class="quality"></p>
             <p class="frequency"></p>
           </div>
