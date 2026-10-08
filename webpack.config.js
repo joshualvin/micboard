@@ -34,7 +34,11 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true, api: 'modern' },
+            options: {
+              sourceMap: true,
+              // @ibm/plex still uses @import and other deprecated Sass APIs
+              sassOptions: { quietDeps: true, silenceDeprecations: ['import'] },
+            },
           },
         ],
       },

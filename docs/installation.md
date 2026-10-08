@@ -31,7 +31,7 @@ Check the [configuration](configuration.md) docs for more information on configu
 
 Micboard v0.9.3 has been tested and confirmed working on a Raspberry Pi 3B+ running Raspberry Pi OS Trixie (Debian 13) 64-bit.
 
-> **Important:** You must use the **64-bit** version of Raspberry Pi OS. Node.js 20 does not support 32-bit ARM. In Raspberry Pi Imager select **Raspberry Pi OS Lite (64-bit)**.
+> **Important:** You must use the **64-bit** version of Raspberry Pi OS. Node.js 24 does not support 32-bit ARM. In Raspberry Pi Imager select **Raspberry Pi OS Lite (64-bit)**.
 
 Follow the same installation steps as Ubuntu above. A few Pi-specific notes:
 
@@ -46,7 +46,7 @@ Follow the same installation steps as Ubuntu above. A few Pi-specific notes:
 ```
 $ sudo apt update
 $ sudo apt install git python3-pip python3-venv libheif-dev -y
-$ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+$ curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
 $ sudo apt install nodejs -y
 ```
 

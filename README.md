@@ -83,7 +83,7 @@ Micboard uses IP addresses to connect to RF devices.  RF devices can be addresse
 * [Micboard MultiVenue](docs/multivenue.md)
 
 #### Developer Info
-* [Building the Electron wrapper for macOS](docs/electron.md)
+* [Building the Electron wrapper for macOS](docs/archive/electron.md) (archived — the Electron app has been removed)
 * [Extending micboard using the API](docs/api.md)
 
 

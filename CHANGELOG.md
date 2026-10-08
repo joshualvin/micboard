@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.9.6] - 2026-10-08
+### Changed
+- Merged Karl's `0.8.7-updates` branch: Bootstrap 5, jQuery removed from the frontend, Electron app and About page removed
+- Background photo manager ported to Bootstrap 5 / plain DOM
+- Dockerfile is now multi-stage (Node 24 builds the frontend, Python 3.13-slim runtime; libheif comes bundled with the pillow-heif wheel)
+- Updated all JavaScript dependencies to their latest versions (Babel 8, webpack-cli 7, sass-loader 17, css-loader 7, style-loader 4, Bootstrap 5.3)
+- Updated Python dependencies: tornado 6.5.10, pillow 12.3.0, pillow-heif 1.8.0
+- Replaced the unmaintained airbnb ESLint config with an ESLint 10 flat config
+- Installation docs now use Node.js 24 LTS
+
 ## [0.9.5] - 2026-03-19
 ### Added
 - Web-based background photo manager (list, upload, rename, delete, download)

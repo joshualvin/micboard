@@ -14,9 +14,6 @@ LABEL maintainer="Will Jarrell <wjarrell@crossings.church>"
 
 WORKDIR /usr/src/app
 
-RUN apt-get update && apt-get install -y --no-install-recommends libheif-dev && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
-
 COPY py/requirements.txt py/requirements.txt
 RUN pip3 install --no-cache-dir -r py/requirements.txt
 
